@@ -5,13 +5,12 @@
   "main": "src/server/index.js",
   "scripts": {
     "parser": "node csvParser/parseAndStoreData.js",
-    "build:prod": "webpack -p --env production",
-    "build" : "webpack --mode production",
+    "build": "webpack -p --env production",
     "start": "node src/server/index.js",
     "server": "nodemon src/server/index.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION: false"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION: false npm run build"
   },
   "keywords": [],
   "author": "",
