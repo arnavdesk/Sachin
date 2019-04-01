@@ -113,6 +113,7 @@ devServer: {
 }
 ```
 [**port**](https://webpack.js.org/configuration/dev-server/#devserver-port)  specifies the Webpack dev server to listen on this particular port (3000 in this case). When  [**open**](https://webpack.js.org/configuration/dev-server/#devserver-open)  is set to true, it will automatically open the home page on startup.  [Proxying](https://webpack.js.org/configuration/dev-server/#devserver-proxy)  URLs can be useful when we have a separate API backend development server and we want to send API requests on the same domain. In our case, we have a Node.js/Express backend where we want to send the API requests to.
+
 The directory given to **contantBase** is served as home directory by webpack dev server, **publicPath** gives the relative path to the directory, inside which the virtual JavaScript files are served by webpack dev server and **historyApiFallback** make sure that `client/public/index.html` file is served on every route. 
 
 ### Concurrently
