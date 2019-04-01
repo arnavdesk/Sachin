@@ -6,8 +6,8 @@
   "scripts": {
     "parser": "node csvParser/parseAndStoreData.js",
     "build:prod": "webpack -p --env production",
-    "build:dev" : "webpack --mode production",
-    "start": "npm run build:prod && node src/server/index.js",
+    "build" : "webpack --mode production",
+    "start": "node src/server/index.js",
     "server": "nodemon src/server/index.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
