@@ -1,8 +1,7 @@
 const path = require("path");
 
 
-module.exports = (env) => {
-  const isProduction = (env === "production");
+module.exports = () => {
   return {
     entry: {
       index : ["@babel/polyfill", "./client/src/app.js"],
