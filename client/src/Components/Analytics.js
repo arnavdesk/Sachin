@@ -29,7 +29,6 @@ class Analytics extends Component{
   }
 
   render(){
-    console.log("Analytics is executed");
     return (
       <div>
         <div className="container">

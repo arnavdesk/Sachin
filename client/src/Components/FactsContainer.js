@@ -10,7 +10,6 @@ class FactsContainer extends Component{
       facts: null,
       errorOnLoad: false
     };
-    console.log("Facts Container - ", this.props);
   }
 
   async fetchStory(storyNum){
@@ -19,7 +18,6 @@ class FactsContainer extends Component{
       if(response.status !== 200){
         throw new Error(`${response.status} ${response.statusText}`);
       }
-      console.log(response);
       let responseData = await response.json();
       this.setState(() => {
         return { facts: responseData.data, errorOnLoad: false };
@@ -36,7 +34,6 @@ class FactsContainer extends Component{
   }
 
   componentDidMount(){
-    console.log("Fact Container Mounted at route - ", this.props.match.params.id);
     this.fetchStory(this.props.match.params.id)
     .then(() => {})
     .catch((error) => {
@@ -50,7 +47,6 @@ class FactsContainer extends Component{
     });
   }
   render(){
-    console.log("Facts state - ", this.state);
     return (
       <div className="container">
         <div className="dataContainer">

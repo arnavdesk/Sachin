@@ -52,12 +52,9 @@ export default class AccumulatedAchievements extends Component {
   componentDidUpdate() {
     // Whenever the component is updated and the chartData is null 
     // get the new data
-    console.log("componentDidUpdate started");
     if (!this.state.chartData && !this.state.errorOnLoad) {
-      console.log("Getting data on component update");
       this.fetchAndSetStateHelper();
     }
-    console.log("componentDidUpdate finised");
   }
 
   componentDidMount() {
@@ -65,7 +62,6 @@ export default class AccumulatedAchievements extends Component {
   }
 
   render() {
-    console.log("This is executed - ", this.state);
     return (
       <div className="chartContainer">
         {this.state.chartData !== null ? (

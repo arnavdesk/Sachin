@@ -15,7 +15,6 @@ export default class CenturiesEveryYear extends Component {
     this.getAnotherYearData = this.getAnotherYearData.bind(this);
   }
   getAnotherYearData(event) {
-    console.log("Get data is executed");
     let arr = event.target.innerText.split("-");
     let startYear = parseInt(arr[0]);
     let endYear = parseInt(arr[1]);
@@ -85,12 +84,9 @@ export default class CenturiesEveryYear extends Component {
   componentDidUpdate() {
     // Whenever the component is updated and the chartData is null 
     // get the new data
-    console.log("componentDidUpdate started");
     if (!this.state.chartData && !this.state.errorOnLoad) {
-      console.log("Getting data on component update");
       this.fetchAndSetStateHelper(this.state.startYear, this.state.endYear);
     }
-    console.log("componentDidUpdate finised");
   }
 
   componentDidMount() {
@@ -98,7 +94,6 @@ export default class CenturiesEveryYear extends Component {
   }
 
   render() {
-    console.log("This is executed - ", this.state);
     return (
       <div className="chartContainer">
         {this.state.chartData !== null ? (
