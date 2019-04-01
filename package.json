@@ -10,7 +10,8 @@
     "start": "npm run build:prod && node src/server/index.js",
     "server": "nodemon src/server/index.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION: false"
   },
   "keywords": [],
   "author": "",
