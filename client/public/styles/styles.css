@@ -1,0 +1,297 @@
+*{
+  box-sizing: border-box;
+  outline: none;
+}
+
+body{
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body, h1, h2, h3, h4, p{
+  padding: 0px;
+  margin: 0px;
+}
+
+a{
+  text-decoration: none;
+  display: inline-block;
+}
+
+.container{
+  width: 95%;
+  margin: 20px auto 20px;
+}
+
+/* === For Sticky Footer === */
+.app{
+  min-height: 100vh;
+}
+
+.header{
+  background-color: #009688;
+  padding: 5px 10px 10px;
+  color: white;
+}
+
+.cricket{
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+}
+
+.flexHeader{
+  display: flex;
+  justify-content: center;
+}
+
+.flexHeader h2{
+  font-size: 38px;
+  letter-spacing: 2px;
+  font-family: 'Audiowide', cursive;
+}
+
+.flexHeader p{
+  font-size: 14px;
+  line-height: .5em;
+  padding-bottom: 5px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.flexHeader div{
+  margin-right: 5px;
+}
+
+
+/* ========= Story Start Styles ========= */
+.storyContainer{
+  background-color: #fff;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0px 3px 5px #424242;
+}
+.storyImg{
+  border-radius: 10px 10px 0px 0px;  
+  height: 400px;
+  background-image: url("/images/startTheJourney.jpg");
+  background-size: cover;
+  background-position-y: 30%;
+}
+
+.storyImgEnd{
+  background-image: url("/images/startTheJourney2.jpg");
+  background-size: cover;
+  background-position-y: 0%;
+  background-position-x: 70%;
+  height: 400px;
+}
+
+.storyInfo{
+  border-radius: 0px 0px 10px 10px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.storyInfo-details{
+  font-family: 'Kalam', cursive;
+  font-size: 16px;
+}
+
+.storyInfo a{
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: #2196f3;
+  letter-spacing: 1.5px;
+}
+
+.storyInfo a:hover{
+  background-color: #bbdefb;
+}
+
+p.endStr{
+  margin-bottom: 5px;
+}
+
+/* ================ Analytics Container ============= */
+.dataContainer{
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.dataContainerHeading{
+  background-color: #009688;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 5px 20px;
+  letter-spacing: 2px;
+  border-bottom: 10px solid black;
+  width: 90%;
+}
+
+.graphContainer{
+  background-color: #fff;
+  box-shadow: 0px 3px 5px #424242;
+}
+
+.graphInfoContainer{
+  margin: 10px 0px;
+  font-size: 12px;
+}
+
+/*================= Facts Styles ====================== */
+
+.factDescription{
+  position: relative;
+}
+
+.factDescription p{
+  background-color: #90caf9;
+  border-radius: 3px;
+  box-shadow: 0px 3px 5px #424242;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+@media (min-width: 400px){
+  .factDescription p{
+    font-size: 14px;
+    padding: 20px 20px;
+  }
+}
+
+@media (min-width: 580px){
+  .factDescription p{
+    font-size: 16px;
+    padding: 20px 20px;
+  }
+}
+
+.factDescription img{
+  position: absolute;
+  width: 20px;
+  bottom: 0px;
+  right: 0px;
+}
+
+/*============== LoadingFacts Animation Styles ====================== */
+
+.loadingFactsContainer{
+  background-color: #ff7043;
+  border-radius: 3px;
+  color: white;
+  padding: 20px 10px;
+  font-size: 14px;
+  box-shadow: 0px 3px 5px #424242;
+}
+
+.flexFactsContainer{
+  display: flex;
+}
+
+.errorOnFactsLoad{
+  background-color: #d50000;
+}
+
+/*============== Navigation Bar Styles ====================== */
+
+.navigationButtons{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ============ Footer Styles ============= */
+
+.footer{
+  background-color: #009688;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer a{
+  font-family: 'Permanent Marker', cursive;
+  color: #fff;
+  font-size: 24px;
+}
+
+/* ============ Loader Styles ============= */
+.loader{
+  height: 364px;
+}
+
+/* =========== Years Played Styles ========== */
+
+.yearsPlayed{
+  border-top: 1px solid #bdbdbd;
+  display: flex;
+  padding: 10px 10px  10px 10px;
+}
+
+.yearsPlayed button{
+  background-color: transparent;
+  border: 1px solid #dd2c00;
+  font-size: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: #dd2c00;
+  letter-spacing: 1.5px;
+}
+
+.yearsPlayed button:disabled{
+  color: #ff9e80;
+  border: 1px solid #ff9e80;
+  cursor: auto;
+}
+
+.yearsPlayed button:active{
+  background-color: #ff9e80;
+}
+
+
+/* ======================== onError Styles ============================ */
+
+.onError{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.onError div{
+  text-align: center;
+  color: #dd2c00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
