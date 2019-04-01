@@ -8,10 +8,10 @@
     "build:prod": "webpack -p --env production",
     "build:dev" : "webpack --mode production",
     "start": "node src/server/index.js",
-    "server": "nodemon src/server/index.js",
+    "server": "npm run build:prod && nodemon src/server/index.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION: false npm run build:dev"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION: false"
   },
   "keywords": [],
   "author": "",
@@ -40,5 +40,8 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
+  },
+  "engines": {
+    "node": "10.15.3"
   }
 }
