@@ -1,3 +1,4 @@
+# ![App Logo](/client/public/icons/medal.png?raw=true)
 # Sachin - The Greatest
 
 This app shows you why Sachin Tendulkar is the greatest cricket of all times, by using interactive stories. It uses `react.js` for front-end, `node.js` for back-end and `mongodb` for storing data. The final version of the application is hosted on `Heroku`, see [here.](https://sachin-the-greatest.herokuapp.com/)
@@ -7,6 +8,8 @@ This app shows you why Sachin Tendulkar is the greatest cricket of all times, by
 The application runs on `node.js` and `mongodb` so before cloning the repository and starting the development server make sure your computer has [node.js](https://nodejs.org/en/download/) and [mongodb](https://www.mongodb.com/download-center) installed on it. 
 
 ### Quick Start 
+Use the below commands in the given order to run the project on your development machine. 
+
 ```bash
 # Clone the repository 
 git clone https://github.com/invalidtoken/Sachin
