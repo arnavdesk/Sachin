@@ -1,26 +1,33 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import StartStory from "./Components/Start";
 import EndStory from "./Components/EndStory";
-import Analytics from "./Components/Analytics";
+import Skeleton from "./Components/Skeleton";
+let LazyLoadedAnalytics = React.lazy(() => import("./Components/Analytics.js"));
+let LazyLoadedNavigationButtons = React.lazy(() => import("./Components/NavigationButtons.js"));
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import NavigationButtons from "./Components/NavigationButtons";
 
-class StoryApp extends React.Component{
-  constructor(props){
+class StoryApp extends React.Component {
+  constructor(props) {
     super(props);
   }
-  render(){
+  render() {
     return (
       <BrowserRouter>
         <div>
           <div className="app">
             <Header />
-            <Route exact={true} path='/' component={StartStory}/>
-            <Route path="/story/:id" component={Analytics}/>
-            <Route path="/story/:id" component={NavigationButtons} />
+            <Route exact={true} path='/' component={StartStory} />
+            <Suspense
+              fallback={(
+                <Skeleton />
+              )}
+            >
+              <Route path="/story/:id" component={LazyLoadedAnalytics} />
+              <Route path="/story/:id" component={LazyLoadedNavigationButtons} />
+            </Suspense>
             <Route path="/end" component={EndStory} />
           </div>
           <Footer />

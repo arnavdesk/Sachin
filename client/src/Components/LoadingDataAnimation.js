@@ -9,7 +9,7 @@ const Loader = () => {
         </div>
       </div>
       <div className="load-text">
-       <p>Cooking a story .....</p>
+       <p>Cooking A Story .....</p>
       </div>
     </div>
   );

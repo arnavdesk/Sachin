@@ -1,10 +1,10 @@
 
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import DataEveryYear from "./Stories/DataEveryYear";
 import { Route, Switch } from "react-router-dom";
-import CenturiesEveryYear from "./Stories/CenturiesEveryYear";
-import AccumulatedAchievements from "./Stories/AccumulatedAchievements";
-import Importance from "./Stories/Importance";
+const LazyLoadedCenturiesEveryYear = React.lazy(() => import("./Stories/CenturiesEveryYear"));
+const LazyLoadedAccumulatedAchievements = React.lazy(() => import("./Stories/AccumulatedAchievements"));
+const LazyLoadedImportance = React.lazy(() => import("./Stories/Importance"));
 import FactsContainer from "./FactsContainer";
 
 class Analytics extends Component{
@@ -65,21 +65,31 @@ class Analytics extends Component{
                     </div>
                   )}
                 />
-                <Route 
-                  exact={true}
-                  path="/story/3"
-                  component={CenturiesEveryYear}
-                />
-                <Route 
-                  exact={true}
-                  path="/story/4"
-                  component={AccumulatedAchievements}
-                />
-                <Route 
-                  exact={true}
-                  path="/story/5"
-                  component={Importance}
-                />
+                <Suspense
+                  fallback={(
+                    <div>
+                      <div className="skeletonMain skeletonWithBackground">
+                        
+                      </div>
+                    </div>
+                  )}
+                >
+                  <Route 
+                    exact={true}
+                    path="/story/3"
+                    component={LazyLoadedCenturiesEveryYear}
+                  />
+                  <Route 
+                    exact={true}
+                    path="/story/4"
+                    component={LazyLoadedAccumulatedAchievements}
+                  />
+                  <Route 
+                    exact={true}
+                    path="/story/5"
+                    component={LazyLoadedImportance}
+                  />
+                </Suspense>
               </Switch>
             </div>
           </div>

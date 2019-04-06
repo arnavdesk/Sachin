@@ -5,9 +5,11 @@ module.exports = () => {
       index : ["@babel/polyfill", "./client/src/app.js"],
     },
     output: {
+      publicPath: "/scripts/",
       path: path.join(__dirname, "client/public/scripts"),
-      filename: "[name]-bundle.js"
-    },
+      filename: "[name]-bundle.js",
+      chunkFilename: '[name].bundle.js'
+    },  
     module: {
       rules: [
         {
@@ -16,7 +18,10 @@ module.exports = () => {
           use: {
             loader: "babel-loader",
             options: {
-              presets: ['@babel/preset-env', "@babel/preset-react"]
+              presets: ['@babel/preset-env', "@babel/preset-react"],
+              plugins: [
+                "@babel/plugin-syntax-dynamic-import"
+              ]
             }
           }
         }
