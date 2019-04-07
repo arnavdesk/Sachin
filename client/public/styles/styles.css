@@ -281,6 +281,7 @@ p.endStr{
   background-color: #dedede;
   width: 100%;
   max-width: 1000px;
+  margin: 0px auto;
   position: relative;
   overflow: hidden;
 }
